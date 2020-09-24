@@ -1,7 +1,7 @@
 ## Сортируемая таблица
 Тестовое задание: https://github.com/fugr-ru/frontend-javascript-test
 
-Вы можете посмотреть демо - https://danielesh.github.io/sort-table/
+Вы можете посмотреть демо - http://sort-table.surge.sh/
 
 или запустить проект локально:
 ### `npm install`
