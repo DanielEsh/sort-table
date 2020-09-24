@@ -2,6 +2,8 @@
   "name": "sort-table",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://danielesh.github.io/sort-table/",
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
