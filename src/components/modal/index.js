@@ -3,12 +3,12 @@ import React from "react";
 import './modal.css';
 
 const Modal = ({
-                   title, isOpen, onCancel, onSubmit, children,
+                   title, isOpen, onCancel, children,
                }) => {
 
     const closeOnOverlay = (event) => {
-        if (event.target === document.querySelector('.modalOverlay') ) onCancel()
-    }
+        if (event.target === document.querySelector('.modalOverlay')) onCancel()
+    };
 
     return (
         <>
@@ -17,14 +17,12 @@ const Modal = ({
                 <div className="modalWindow">
                     <div className="modalHeader">
                         <div className="modalTitle">{title}</div>
-                        <div className="times" onClick={onCancel}/>
+                        <div className="times" onClick={onCancel}>&times;</div>
                     </div>
                     <div className="modalBody">
                         {children}
                     </div>
                     <div className="modalFooter">
-                        <button onClick={onCancel}>Cancel</button>
-                        <button onClick={onSubmit}>Submit</button>
                     </div>
                 </div>
             </div>

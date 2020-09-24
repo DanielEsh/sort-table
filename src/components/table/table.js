@@ -1,23 +1,16 @@
 import React from "react";
+import {isEmpty} from 'lodash'
+
+import Spinner from "../spinner";
 
 const Table = ( {posts, loading, onRowSelect, onSort, sort,sortField}) => {
 
     if (loading) {
-        return <h2>Loading...</h2>
+        return <Spinner/>
     }
-    const sortById = (id) => {
-        console.log('Сортировка по ID')
-        console.log(posts)
-        return posts.sort((a,b)=> {
-            console.log(a[id])
-            if (a.id < b.id ){
-                return -1
-            }
-            if (a.id  > b.id ){
-                return 1
-            }
-            return 0
-        })
+
+    if (!loading && isEmpty(posts)){
+        return <h2>По вашему запросу ничего не найдено</h2>
     }
 
     return (
@@ -64,7 +57,7 @@ const Table = ( {posts, loading, onRowSelect, onSort, sort,sortField}) => {
 
         </div>
     )
-}
+};
 
 
 export default Table

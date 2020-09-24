@@ -25,3 +25,16 @@
 .form-error-info{
     color: #dc3545;
 }
+
+.table-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.table-search{
+    display: flex;
+}
+nav{
+    display: flex;
+    justify-content: center;
+}

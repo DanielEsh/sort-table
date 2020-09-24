@@ -1,22 +1,22 @@
 import React, {useState} from 'react'
 
 const Search = ({onSearch}) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
 
     const valueChangeHandler = event => {
         setValue(event.target.value)
-    }
+    };
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         onSearch(value)
-    }
+    };
 
     return (
-        <>
-            <div className="input-group mb-3 mt-3">
-                <div className="input-group-prepend">
-                    <form onSubmit={handleSubmit}>
+        <div className='table-search'>
+            <div className="input-group mb-3 mt-3 ">
+                <div className="input-group-prepend ">
+                    <form onSubmit={handleSubmit} className='d-flex'>
                         <input
                             type="text"
                             className="form-control"
@@ -34,8 +34,8 @@ const Search = ({onSearch}) => {
                 </div>
 
             </div>
-        </>
+        </div>
     );
-}
+};
 
 export default Search
