@@ -1,7 +1,18 @@
-FROM node:alpine
-WORKDIR '/app'
+#base image
+FROM node
 
-COPY package.json .
+# set working directory
+RUN mkdir /usr/src/app
+#copy all files from current directory to docker
+COPY . /usr/src/app
+
+WORKDIR /usr/src/app
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
 RUN npm install
-COPY src .
-CMD ["npm","run","start"]
+
+# start app
+CMD ["npm", "start"]
